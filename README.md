@@ -1,5 +1,20 @@
 # aggie
+
+setup your virtual environment on macOS
+	python3 -m venv .venv
+	source .venv/bin/activate
+	pip3 install flask
+
+
 A prototype for an agriculture crm/erp
+
+Running The App On Command Line In this directory
+	-Create a python virtual environment 
+		-python3 -m venv .venv
+	-Activate virtual environment
+		. .venv/bin/activates
+	-intall flask
+		pip3 install Flask
 
 
 -----User Stories------
@@ -25,3 +40,4 @@ With the ERP
 	-* as a shipper I want to keep track of outstanding shipments 
 	-* as an accountant I want to keep track of payroll
 	-* as a salesman I want to be able to keep track of personal potential leads
+
