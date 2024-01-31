@@ -1,0 +1,18 @@
+<!doctype html>
+	<title>{% block title %} {% endblock %}</title>
+
+	<nav>
+		<ul>
+			<li><a href="{{url_for('employee.harvests')}}">harvests</a></li>
+		</ul>
+	</nav>
+
+	<section class="content">
+		<header>
+			{% block header %} {% endblock %}
+		</header>
+		{%for message in get_flashed_messages() %}
+			<div class="flash">{{message}}</div>
+		{%endfor%}
+		{% block content %} {% endblock %}
+	</section>

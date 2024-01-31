@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{%block header%} 
+	<h1>{%block title%} Harvests {%endblock%}</h1>
+	<a href="url_for('employee.create_harvests')">New Harvest</a>
+{%endblock%}
+
+
+{%block content%}
+	{%for harvest in harvests%}
+		<article class="harvest">
+			<header>
+				<div class="harvest_title">
+					{{harvest['crop']}} crop, picked on {{harvest['picked'].strftime('%m-%d-%Y')}} <br>
+				</div>
+			</header>
+			<p class="harvest_info">
+				{{harvest['bushells_left']}} bushells left <br>
+				Expiration date {{harvest['expiration'].strftime('%m-%d-%Y')}}<br>
+				Picked On {{harvest['picked'].strftime('%m-%d-%Y')}}<br>
+			</p>
+		</article>
+		{%if not loop.last%}
+		<hr>
+		{%endif%}
+	{%endfor%}
+{%endblock%}
