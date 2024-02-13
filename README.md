@@ -1,21 +1,20 @@
 # aggie
 
-setup your virtual environment on macOS
-	python3 -m venv .venv
-	source .venv/bin/activate
-	pip3 install flask
-
-
-A prototype for an agriculture crm/erp
-
 Running The App On Command Line In this directory
 	-Create a python virtual environment 
-		-python3 -m venv .venv
+		python3 -m venv .venv
 	-Activate virtual environment
 		. .venv/bin/activates
 	-intall flask
 		pip3 install Flask
+	-Run with
+		flask --app main run
+	-View dev environment at url:
+		http://127.0.0.1:5000
+	-Initialize database with
+		flask --app aggie init-db
 
+A prototype for an agriculture crm/erp
 
 -----User Stories------
 With the CRM app

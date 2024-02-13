@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{%block header%} 
+	<h1>{%block title%} Shipments {%endblock%}</h1>
+	<a href="{{url_for('employee.create_shipments')}}">New Shipment</a>
+{%endblock%}
+
+
+{%block content%}
+	{%for shipment in shipments%}
+		<article class="harvest">
+			<header>
+				<div class="shipment_id">
+					shipment #{{shipment['id']}} <br>
+				</div>
+			</header>
+			<p class="harvest_info">
+				{{shipment['bushells_of_wheat']}} bushells of wheat <br>
+				{{shipment['bushells_of_walnuts']}} bushells of walnuts <br>
+				{{shipment['bushells_of_almonds']}} bushells of almonds <br>
+			</p>
+		</article>
+		<form action="{{ url_for('employee.delete_shipments', id = shipment['id'])}}" method="post">
+		<input class = "danger" type="submit" value="Delete" onclick="return confirm('are you sure?');">
+		</form>
+		{%if not loop.last%}
+		<hr>
+		{%endif%}
+	{%endfor%}
+{%endblock%}

@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+{%block header%} 
+	<h1>{%block title%} Create Harvests {%endblock%}</h1>
+	<a href="{{url_for('employee.harvests')}}">Cancell</a>
+{%endblock%}
+
+{%block content%}
+	<form method="post">
+		<input type="radio" id = "wheat" name="crop" value="wheat">
+		<label for = "wheat">Wheat</label> <br>
+		<input type="radio" id = "almond" name="crop" value="almond">
+		<label for = "almond">Almonds</label> <br>
+		<input type="radio" id = "walnuts" name="crop" value="walnut">
+		<label for = "walnut">Walnuts</label> <br>
+
+		<label for = "bushells_left">How Many Bushells</label> <br>
+		<input type="text" name="bushells_left" id="bushells_left" value="{{request.form['bushells_left']}}" required><br>
+		<label for = "picked">What Day Was It Harvested</label> <br>
+		<input type="date" id = "picked" name="picked" value="{{request.form['picked']}}">
+		<input type="submit" name = "post">
+	</form>
+{%endblock%}

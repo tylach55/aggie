@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+
+{%block header%} 
+	<h1>{%block title%} Create Shipment {%endblock%}</h1>
+	<a href="{{url_for('employee.shipments')}}">Cancell</a>
+{%endblock%}
+
+{%block content%}
+	<form method="post">
+		<label for = "bushells_of_wheat">How Many Bushells of Wheat</label> <br>
+		<input type="text" name="bushells_of_wheat" id="bushells_of_wheat" value="{{request.form['bushells_of_wheat']}}" required><br>
+
+		<label for = "bushells_of_almonds">How Many Bushells of Almonds</label> <br>
+		<input type="text" name="bushells_of_almonds" id="bushells_of_almonds" value="{{request.form['bushells_of_wheat']}}" required><br>
+
+		<label for = "bushells_of_walnuts">How Many Bushells of Walnuts</label> <br>
+		<input type="text" name="bushells_of_walnuts" id="bushells_of_walnuts" value="{{request.form['bushells_of_wheat']}}" required><br>
+		<input type="submit" name = "post">
+	</form>
+{%endblock%}
